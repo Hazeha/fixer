@@ -1,0 +1,16 @@
+{
+  "resourceName": "postimg",
+  "policyUUID": "aa29db70",
+  "bucketName": "fixerfd877aafc0934ef190e2fe3aa428a7f7",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
