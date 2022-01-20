@@ -1,0 +1,15 @@
+{
+  "resourceName": "productfiles",
+  "policyUUID": "f2b8afda",
+  "bucketName": "fixitfilebucket",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "groupAccess": {}
+}

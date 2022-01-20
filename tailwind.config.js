@@ -1,15 +1,9 @@
-
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'hero-img': "src('/public/bg-picture.jpg')"
-      }
-    },
-  },
-  variants: {
     extend: {},
   },
   plugins: [

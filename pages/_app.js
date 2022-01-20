@@ -1,10 +1,11 @@
 import 'tailwindcss/tailwind.css'
 import '../configureAmplify'
-import Link from 'next/Link'
 import { useState, useEffect } from 'react'
-import { Auth, Hub } from 'aws-amplify'
-import NavInfo from '../src/components/NavInfo'
-import Header from './ui/header'
+import { Auth, Hub, I18n } from 'aws-amplify'
+import TopNav from '../src/components/template/TopNav'
+import Header from '../src/components/template/Header'
+import Footer from '../src/components/template/Footer'
+import { translations} from '@aws-amplify/ui';
 
 function MyApp({ Component, pageProps }) {
   const [signedInUser, setSignedInUser] = useState(false)
@@ -29,34 +30,64 @@ function MyApp({ Component, pageProps }) {
   return (
     <div className="antialiased bg-gray-200 text-gray-900 font-sans">
       
-      <NavInfo auth={signedInUser} />
+      <TopNav auth={signedInUser} />
       <Header />
-      <nav className="items-center justify-end bg-transparent">
-        <div className="sm:hidden">
-          <button onClick={() => setNavOpen(!navOpen)} className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-            <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-          </button>
-        </div>
-      </nav>
-      { navOpen && 
-          <div className="text-sm flex lg:flex-grow flex-col text-center ">
-            <Link href="/">
-              <span className="mr-6 cursor-pointer my-3 py-3 font-semibold text-2xl">Home</span>
-            </Link>
-            <Link href="/create-post">
-              <span className="mr-6 cursor-pointer my-3 py-3 font-semibold text-2xl">Create Post</span>
-            </Link>
-            <Link href="/profile">
-              <span className="mr-6 cursor-pointer my-3 py-3 font-semibold text-2xl">Profile</span>
-            </Link>
-          </div>
-        }
-        
       <div className="" >
         <Component {...pageProps} />
       </div>
+      <Footer />
     </div>
   )
 }
-
 export default MyApp
+
+I18n.putVocabularies(translations);
+I18n.setLanguage('dk');
+
+I18n.putVocabularies({
+  dk: {
+    'Sign in to your account': "Log ind", 
+    'Sign In': "Log Ind", 
+    "Sign in": "Log ind", 
+    'Sign Up': "Opret Konto", 
+    "Username *": "Brugernavn *", 
+    "Username": "Brugernavn", 
+    "Password *": "Kodeord *", 
+    "Password": "Kodeord", 
+    "Enter your password": "Indtast Kodeord", 
+    "No account?": "Ingen Account?", 
+    "Create account": "Opret Konto", 
+    "Create Account": "Opret Konto", 
+    "Have an account?": "Har du en konto?", 
+    "Have a code?": "Har du en kode?", 
+    "Code *": "Kode", 
+    "Confirm": "Verificer", 
+    "Reset Password": "Reset Kode", 
+    "Reset password": "Reset Kode", 
+    "Reset your password": "Reset kodeord", 
+    "Confirm Password": "Bekræft Kodeord",
+    "Back to Sign in": "Tilbage til Login", 
+    "You will receive a verification code to reset your password": "Du vil modtage en verificerings kode til genskabelse", 
+    "Submit": "Send", 
+    "Verify": "Verificer", 
+    'Verify Contact': "Verificer kontakt", 
+    'Skip': "Spring over", 
+    "Lost your code?'": "Glemt Kode?", 
+    "Resend": "Send Igen", 
+    "Forgot Password?": "Glemt Kode?", 
+    "Forgot Your Password?": "Glemt Kode?",
+    "Forgot your password?": "Glemt Kode?",
+    "You will receive a verification code": "Du vil modtage en verificerings kode", 
+    'Code': "Kode",
+    'Account recovery requires verified contact information': "Account recovery requires verified contact information", 
+    'User does not exist': "Bruger eksistere ikke", 
+    'User already exists': "Bruger eksistere allerede", 
+    'Incorrect username or password': "Forkert brugernavn eller kode", 
+    'Invalid password format': "Ugyldig kode", 
+    'Invalid phone number format': "Forkert telefon nr. +4534567890", 
+    "Username cannot be empty": "Brugernavn må ikke være tomt", 
+    "Custom auth lambda trigger is not configured for the user pool.": "Custom auth lambda trigger is not configured for the user pool.", 
+    "Incorrect username or password.": "Forkert brugernavn eller kode", 
+    "Password attempts exceeded": "For mange login forsøg"
+  }
+});

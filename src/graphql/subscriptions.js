@@ -2,129 +2,48 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateUser = /* GraphQL */ `
-  subscription OnCreateUser {
-    onCreateUser {
+  subscription OnCreateUser($username: String) {
+    onCreateUser(username: $username) {
       id
       username
       email
       firstname
       lastname
       verified
+      profileimage
       location
-      rating
       createdAt
       updatedAt
-      products {
-        items {
-          id
-          name
-          discription
-          category
-          priceDay
-          priceWeek
-          rating
-          username
-          createdAt
-          baseType
-          updatedAt
-        }
-        nextToken
-      }
     }
   }
 `;
 export const onUpdateUser = /* GraphQL */ `
-  subscription OnUpdateUser {
-    onUpdateUser {
+  subscription OnUpdateUser($username: String) {
+    onUpdateUser(username: $username) {
       id
       username
       email
       firstname
       lastname
       verified
+      profileimage
       location
-      rating
       createdAt
       updatedAt
-      products {
-        items {
-          id
-          name
-          discription
-          category
-          priceDay
-          priceWeek
-          rating
-          username
-          createdAt
-          baseType
-          updatedAt
-        }
-        nextToken
-      }
     }
   }
 `;
 export const onDeleteUser = /* GraphQL */ `
-  subscription OnDeleteUser {
-    onDeleteUser {
+  subscription OnDeleteUser($username: String) {
+    onDeleteUser(username: $username) {
       id
       username
       email
       firstname
       lastname
       verified
+      profileimage
       location
-      rating
-      createdAt
-      updatedAt
-      products {
-        items {
-          id
-          name
-          discription
-          category
-          priceDay
-          priceWeek
-          rating
-          username
-          createdAt
-          baseType
-          updatedAt
-        }
-        nextToken
-      }
-    }
-  }
-`;
-export const onCreateComment = /* GraphQL */ `
-  subscription OnCreateComment {
-    onCreateComment {
-      id
-      productID
-      content
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateComment = /* GraphQL */ `
-  subscription OnUpdateComment {
-    onUpdateComment {
-      id
-      productID
-      content
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteComment = /* GraphQL */ `
-  subscription OnDeleteComment {
-    onDeleteComment {
-      id
-      productID
-      content
       createdAt
       updatedAt
     }
@@ -137,22 +56,13 @@ export const onCreateProduct = /* GraphQL */ `
       name
       discription
       category
-      priceDay
-      priceWeek
+      price
       rating
-      comments {
-        items {
-          id
-          productID
-          content
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      username
       createdAt
       baseType
+      coverImage
+      images
+      username
       updatedAt
     }
   }
@@ -164,22 +74,13 @@ export const onUpdateProduct = /* GraphQL */ `
       name
       discription
       category
-      priceDay
-      priceWeek
+      price
       rating
-      comments {
-        items {
-          id
-          productID
-          content
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      username
       createdAt
       baseType
+      coverImage
+      images
+      username
       updatedAt
     }
   }
@@ -191,22 +92,13 @@ export const onDeleteProduct = /* GraphQL */ `
       name
       discription
       category
-      priceDay
-      priceWeek
+      price
       rating
-      comments {
-        items {
-          id
-          productID
-          content
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      username
       createdAt
       baseType
+      coverImage
+      images
+      username
       updatedAt
     }
   }

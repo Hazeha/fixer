@@ -1,39 +1,18 @@
 {
-  "api": {
-    "fixer": {
-      "service": "AppSync",
-      "providerPlugin": "awscloudformation",
-      "output": {
-        "authConfig": {
-          "defaultAuthentication": {
-            "authenticationType": "API_KEY",
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 365,
-              "apiKeyExpirationDate": "2022-12-01T14:54:35.223Z",
-              "description": "public"
-            }
-          },
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-              "userPoolConfig": {
-                "userPoolId": "authfixer13f06520"
-              }
-            }
-          ]
-        }
-      }
-    }
-  },
   "auth": {
-    "fixer13f06520": {
+    "fixitbb7cb9ce": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
       "frontendAuthConfig": {
-        "socialProviders": [],
-        "usernameAttributes": [],
+        "socialProviders": [
+          "FACEBOOK",
+          "GOOGLE"
+        ],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
         "signupAttributes": [
           "EMAIL"
         ],
@@ -51,30 +30,56 @@
       }
     }
   },
-  "function": {
-    "S3Triggereee20a83": {
-      "service": "Lambda",
+  "api": {
+    "fixit": {
+      "service": "AppSync",
       "providerPlugin": "awscloudformation",
-      "build": true
-    },
-    "ddbuser": {
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "apiKeyExpirationDate": "2023-01-09T01:02:24.063Z",
+              "description": "public"
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authfixitbb7cb9ce"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "function": {
+    "fixitPostAuth": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
       "dependsOn": [
         {
           "category": "api",
-          "resourceName": "fixer",
+          "resourceName": "fixit",
           "attributes": [
             "GraphQLAPIIdOutput",
             "GraphQLAPIEndpointOutput"
           ]
         }
       ]
+    },
+    "S3Trigger0f206c9d": {
+      "service": "Lambda",
+      "providerPlugin": "awscloudformation",
+      "build": true
     }
   },
   "storage": {
-    "postimg": {
+    "productfiles": {
       "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": []

@@ -1,0 +1,6 @@
+nextamplified:
+  component: "@sls-next/serverless-component"
+  inputs:
+    bucketName: hyrdeployment
+    region: eu-west-1
+

@@ -13,26 +13,10 @@ export const createUser = /* GraphQL */ `
       firstname
       lastname
       verified
+      profileimage
       location
-      rating
       createdAt
       updatedAt
-      products {
-        items {
-          id
-          name
-          discription
-          category
-          priceDay
-          priceWeek
-          rating
-          username
-          createdAt
-          baseType
-          updatedAt
-        }
-        nextToken
-      }
     }
   }
 `;
@@ -48,26 +32,10 @@ export const updateUser = /* GraphQL */ `
       firstname
       lastname
       verified
+      profileimage
       location
-      rating
       createdAt
       updatedAt
-      products {
-        items {
-          id
-          name
-          discription
-          category
-          priceDay
-          priceWeek
-          rating
-          username
-          createdAt
-          baseType
-          updatedAt
-        }
-        nextToken
-      }
     }
   }
 `;
@@ -83,66 +51,8 @@ export const deleteUser = /* GraphQL */ `
       firstname
       lastname
       verified
+      profileimage
       location
-      rating
-      createdAt
-      updatedAt
-      products {
-        items {
-          id
-          name
-          discription
-          category
-          priceDay
-          priceWeek
-          rating
-          username
-          createdAt
-          baseType
-          updatedAt
-        }
-        nextToken
-      }
-    }
-  }
-`;
-export const createComment = /* GraphQL */ `
-  mutation CreateComment(
-    $input: CreateCommentInput!
-    $condition: ModelCommentConditionInput
-  ) {
-    createComment(input: $input, condition: $condition) {
-      id
-      productID
-      content
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateComment = /* GraphQL */ `
-  mutation UpdateComment(
-    $input: UpdateCommentInput!
-    $condition: ModelCommentConditionInput
-  ) {
-    updateComment(input: $input, condition: $condition) {
-      id
-      productID
-      content
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteComment = /* GraphQL */ `
-  mutation DeleteComment(
-    $input: DeleteCommentInput!
-    $condition: ModelCommentConditionInput
-  ) {
-    deleteComment(input: $input, condition: $condition) {
-      id
-      productID
-      content
       createdAt
       updatedAt
     }
@@ -158,22 +68,13 @@ export const createProduct = /* GraphQL */ `
       name
       discription
       category
-      priceDay
-      priceWeek
+      price
       rating
-      comments {
-        items {
-          id
-          productID
-          content
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      username
       createdAt
       baseType
+      coverImage
+      images
+      username
       updatedAt
     }
   }
@@ -188,22 +89,13 @@ export const updateProduct = /* GraphQL */ `
       name
       discription
       category
-      priceDay
-      priceWeek
+      price
       rating
-      comments {
-        items {
-          id
-          productID
-          content
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      username
       createdAt
       baseType
+      coverImage
+      images
+      username
       updatedAt
     }
   }
@@ -218,22 +110,13 @@ export const deleteProduct = /* GraphQL */ `
       name
       discription
       category
-      priceDay
-      priceWeek
+      price
       rating
-      comments {
-        items {
-          id
-          productID
-          content
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      username
       createdAt
       baseType
+      coverImage
+      images
+      username
       updatedAt
     }
   }

@@ -1,15 +1,10 @@
-import GetRecentProducts from '../src/components/productRecent'
+import GetPostImgStack from './bgImg'
 import {RiSearch2Line} from 'react-icons/ri'
 import {BiMapPin} from 'react-icons/bi'
 import {BsCalendarDate} from 'react-icons/bs'
-import HowTo from '../src/components/HowTo'
-import Categories from '../src/components/Categories'
-
-export default function Home() {
-
-  return(
-    <div>
-      <header className="flex flex-row justify-center pt-7 h-1/3">
+export default function MainHeader() {
+    return(
+        <header className="flex flex-row justify-center h-1/3">
         <div className="bg-opacity-80 bg-gray-600 z-10 w-full h-1/3">
           <div className="">
             <h1 className="mt-12 text-center text-5xl font-bold text-gray-100 z-50">Lej istedet for at købe</h1>
@@ -34,22 +29,9 @@ export default function Home() {
           
         </div>
        
-        {/* GetPostImgStack() */}
+        {GetPostImgStack()}
         
         
       </header>
-      
-      <Categories />
-      <section>
-      {
-        <GetRecentProducts />
-      }
-      </section>
-      {
-        HowTo()
-      }
-    
-    </div>
     )
 }
-

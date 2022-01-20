@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "fixit",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authfixitbb7cb9ce",
+      "Outputs.UserPoolId"
+    ]
+  },
+  "AuthModeLastUpdated": "2022-01-09T01:02:38.904Z"
+}

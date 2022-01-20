@@ -1,5 +1,5 @@
 projects:
-  fixer:
+  fixit:
     schemaPath: graphql/schema.json
     includes:
       - src/graphql/**/*.js

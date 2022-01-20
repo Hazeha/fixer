@@ -1,29 +1,29 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-fixer-dev-234837-authRole",
-      "UnauthRoleArn": "arn:aws:iam::493783259804:role/amplify-fixer-dev-234837-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::493783259804:role/amplify-fixer-dev-234837-authRole",
+      "AuthRoleName": "amplify-fixit-dev-131406-authRole",
+      "UnauthRoleArn": "arn:aws:iam::493783259804:role/amplify-fixit-dev-131406-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::493783259804:role/amplify-fixit-dev-131406-authRole",
       "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-fixer-dev-234837-deployment",
-      "UnauthRoleName": "amplify-fixer-dev-234837-unauthRole",
-      "StackName": "amplify-fixer-dev-234837",
-      "StackId": "arn:aws:cloudformation:eu-west-1:493783259804:stack/amplify-fixer-dev-234837/7a7eff20-5166-11ec-9aa4-0263f70cd5a5",
-      "AmplifyAppId": "d2ik2vpxw8d9ew"
+      "DeploymentBucketName": "amplify-fixit-dev-131406-deployment",
+      "UnauthRoleName": "amplify-fixit-dev-131406-unauthRole",
+      "StackName": "amplify-fixit-dev-131406",
+      "StackId": "arn:aws:cloudformation:eu-west-1:493783259804:stack/amplify-fixit-dev-131406/829686d0-58e9-11ec-ae1e-0629f3caedd9",
+      "AmplifyAppId": "d3v4m98vfbbs15"
     },
     "categories": {
       "auth": {
-        "fixer13f06520": {},
+        "fixitbb7cb9ce": {},
         "true": {}
       },
       "function": {
-        "S3Triggereee20a83": {
-          "deploymentBucketName": "amplify-fixer-dev-234837-deployment",
-          "s3Key": "amplify-builds/S3Triggereee20a83-7458376a503037704666-build.zip"
+        "S3Trigger0f206c9d": {
+          "deploymentBucketName": "amplify-fixit-dev-131406-deployment",
+          "s3Key": "amplify-builds/S3Trigger0f206c9d-6f486e4e4e6577444b66-build.zip"
         },
-        "ddbuser": {
-          "deploymentBucketName": "amplify-fixer-dev-234837-deployment",
-          "s3Key": "amplify-builds/ddbuser-56447053774a526c6b59-build.zip"
+        "fixitPostAuth": {
+          "deploymentBucketName": "amplify-fixit-dev-131406-deployment",
+          "s3Key": "amplify-builds/fixitPostAuth-4a6367466e317154305a-build.zip"
         }
       }
     }

@@ -1,12 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
-    "api": {
-        "fixer": {
-            "GraphQLAPIIdOutput": "string",
-            "GraphQLAPIEndpointOutput": "string"
-        }
-    },
     "auth": {
-        "fixer13f06520": {
+        "fixitbb7cb9ce": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "UserPoolId": "string",
@@ -16,14 +10,21 @@ export type AmplifyDependentResourcesAttributes = {
             "AppClientID": "string"
         }
     },
+    "api": {
+        "fixit": {
+            "GraphQLAPIKeyOutput": "string",
+            "GraphQLAPIIdOutput": "string",
+            "GraphQLAPIEndpointOutput": "string"
+        }
+    },
     "function": {
-        "S3Triggereee20a83": {
+        "fixitPostAuth": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
             "LambdaExecutionRole": "string"
         },
-        "ddbuser": {
+        "S3Trigger0f206c9d": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
@@ -31,7 +32,7 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "storage": {
-        "postimg": {
+        "productfiles": {
             "BucketName": "string",
             "Region": "string"
         }

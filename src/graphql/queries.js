@@ -10,26 +10,10 @@ export const getUser = /* GraphQL */ `
       firstname
       lastname
       verified
+      profileimage
       location
-      rating
       createdAt
       updatedAt
-      products {
-        items {
-          id
-          name
-          discription
-          category
-          priceDay
-          priceWeek
-          rating
-          username
-          createdAt
-          baseType
-          updatedAt
-        }
-        nextToken
-      }
     }
   }
 `;
@@ -47,40 +31,8 @@ export const listUsers = /* GraphQL */ `
         firstname
         lastname
         verified
+        profileimage
         location
-        rating
-        createdAt
-        updatedAt
-        products {
-          nextToken
-        }
-      }
-      nextToken
-    }
-  }
-`;
-export const getComment = /* GraphQL */ `
-  query GetComment($id: ID!) {
-    getComment(id: $id) {
-      id
-      productID
-      content
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listComments = /* GraphQL */ `
-  query ListComments(
-    $filter: ModelCommentFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        productID
-        content
         createdAt
         updatedAt
       }
@@ -95,22 +47,13 @@ export const getProduct = /* GraphQL */ `
       name
       discription
       category
-      priceDay
-      priceWeek
+      price
       rating
-      comments {
-        items {
-          id
-          productID
-          content
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      username
       createdAt
       baseType
+      coverImage
+      images
+      username
       updatedAt
     }
   }
@@ -127,33 +70,29 @@ export const listProducts = /* GraphQL */ `
         name
         discription
         category
-        priceDay
-        priceWeek
+        price
         rating
-        comments {
-          nextToken
-        }
-        username
         createdAt
         baseType
+        coverImage
+        images
+        username
         updatedAt
       }
       nextToken
     }
   }
 `;
-export const productSearchByName = /* GraphQL */ `
-  query ProductSearchByName(
-    $baseType: String
-    $name: ModelStringKeyConditionInput
+export const productsByUsername = /* GraphQL */ `
+  query ProductsByUsername(
+    $username: String
     $sortDirection: ModelSortDirection
     $filter: ModelProductFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    productSearchByName(
-      baseType: $baseType
-      name: $name
+    productsByUsername(
+      username: $username
       sortDirection: $sortDirection
       filter: $filter
       limit: $limit
@@ -164,163 +103,13 @@ export const productSearchByName = /* GraphQL */ `
         name
         discription
         category
-        priceDay
-        priceWeek
+        price
         rating
-        comments {
-          nextToken
-        }
-        username
         createdAt
         baseType
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const productSearchByCategory = /* GraphQL */ `
-  query ProductSearchByCategory(
-    $baseType: String
-    $category: ModelStringKeyConditionInput
-    $sortDirection: ModelSortDirection
-    $filter: ModelProductFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    productSearchByCategory(
-      baseType: $baseType
-      category: $category
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        name
-        discription
-        category
-        priceDay
-        priceWeek
-        rating
-        comments {
-          nextToken
-        }
+        coverImage
+        images
         username
-        createdAt
-        baseType
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const productByCategory = /* GraphQL */ `
-  query ProductByCategory(
-    $category: String
-    $createdAt: ModelStringKeyConditionInput
-    $sortDirection: ModelSortDirection
-    $filter: ModelProductFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    productByCategory(
-      category: $category
-      createdAt: $createdAt
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        name
-        discription
-        category
-        priceDay
-        priceWeek
-        rating
-        comments {
-          nextToken
-        }
-        username
-        createdAt
-        baseType
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const productByPriceDay = /* GraphQL */ `
-  query ProductByPriceDay(
-    $baseType: String
-    $priceDay: ModelFloatKeyConditionInput
-    $sortDirection: ModelSortDirection
-    $filter: ModelProductFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    productByPriceDay(
-      baseType: $baseType
-      priceDay: $priceDay
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        name
-        discription
-        category
-        priceDay
-        priceWeek
-        rating
-        comments {
-          nextToken
-        }
-        username
-        createdAt
-        baseType
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const productByPriceWeek = /* GraphQL */ `
-  query ProductByPriceWeek(
-    $baseType: String
-    $priceWeek: ModelFloatKeyConditionInput
-    $sortDirection: ModelSortDirection
-    $filter: ModelProductFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    productByPriceWeek(
-      baseType: $baseType
-      priceWeek: $priceWeek
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        name
-        discription
-        category
-        priceDay
-        priceWeek
-        rating
-        comments {
-          nextToken
-        }
-        username
-        createdAt
-        baseType
         updatedAt
       }
       nextToken
