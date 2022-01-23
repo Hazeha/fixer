@@ -27,7 +27,7 @@ export default function CategoryPage({ products, category_name }) {
 
     return (
         <div className="container mx-auto flex flex-row flex-wrap">
-            <div className="w-1/5 p-2 bg-yellow-50 shadow-md h-56">
+            <div className="w-1/5 p-2 bg-gray-50 shadow-md h-56">
                 <h2 className="text-lg font-semibold">Kategorier</h2>
                 <ul className="border-t border-yellow-400">
                 {

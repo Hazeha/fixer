@@ -21,7 +21,7 @@ export default function ProductIndex() {
     }
   return(
     <div className="flex flex-row flex-wrap w-4/5 justify-around mx-auto">
-      <div className="w-1/5 p-2 bg-yellow-50 shadow-md h-56">
+      <div className="w-1/5 p-2 bg-gray-50 shadow-md h-56">
         <h2 className="text-lg font-semibold">Kategorier</h2>
         <ul className="border-t border-yellow-400">
           {
